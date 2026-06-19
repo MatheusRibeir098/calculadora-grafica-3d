@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* === shadcn/ui Base Colors === */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -28,6 +29,8 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
+  /* === Sidebar === */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -36,6 +39,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* === Design Tokens: Border Radii === */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -45,20 +50,24 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   /* === Design Tokens: Surfaces === */
+  /* bg-surface (#1a1a2e), bg-surface-elevated (#252547) */
   --color-surface: #1a1a2e;
   --color-surface-elevated: #252547;
 
   /* === Design Tokens: Neon Accents === */
+  /* text-accent-cyan, text-accent-purple, text-accent-green, text-accent-pink */
   --color-accent-cyan: #06b6d4;
   --color-accent-purple: #a855f7;
   --color-accent-green: #22c55e;
   --color-accent-pink: #ec4899;
 
   /* === Design Tokens: Text === */
+  /* text-text-primary (#f8fafc), text-text-secondary (#94a3b8) */
   --color-text-primary: #f8fafc;
   --color-text-secondary: #94a3b8;
 
   /* === Design Tokens: Typography === */
+  /* font-sans = Inter, font-mono = JetBrains Mono */
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
@@ -66,7 +75,7 @@
 /* Dark-premium theme — always active (dark mode default) */
 :root {
   --radius: 0.625rem;
-  --background: hsl(240 33% 3%);
+  --background: #0a0a0f;
   --foreground: hsl(0 0% 95%);
   --card: hsl(240 28% 14%);
   --card-foreground: hsl(0 0% 95%);
