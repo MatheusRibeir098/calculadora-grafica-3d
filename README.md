@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧮 Calculadora Gráfica 3D
 
-## Getting Started
+Calculadora científica com plotagem de funções 2D e superfícies 3D (`z = f(x, y)`) direto no navegador.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Three.js](https://img.shields.io/badge/Three.js-r184-000000?style=flat-square&logo=three.js&logoColor=white)](https://threejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+
+<!-- TODO: adicionar GIF da superfície 3D girando -->
+
+🔗 Demo: _(deploy pendente)_
+
+---
+
+## ✨ O que faz
+
+- **Calculadora científica** — avaliação de expressões com `math.js`. Botões para funções
+  trigonométricas (`sin`, `cos`, `tan`, `asin`, `acos`, `atan`), logaritmos (`log`, `ln`),
+  raiz quadrada (`sqrt`), potências (`x²`, `xⁿ`), `abs`, fatorial (`!`), porcentagem (`%`),
+  constantes `π` e `e`, além das operações básicas. Fecha automaticamente parênteses
+  desbalanceados e mantém histórico dos cálculos.
+- **Plotagem 2D** — desenha o gráfico de funções de uma variável em `<canvas>` com zoom e
+  pan. Exemplos aceitos: `sin(x)`, `x^2`, `1/x`, `sqrt(x)`.
+- **Superfícies 3D** — renderiza `z = f(x, y)` em WebGL via Three.js / react-three-fiber,
+  com controles de órbita (arrastar para girar) e modos de exibição sólido, wireframe ou
+  ambos. Exemplos aceitos: `sin(x)*cos(y)` (padrão), `x^2 + y^2`, `sin(x) + cos(y)`.
+
+> As expressões são interpretadas pelo `math.js`, então qualquer sintaxe suportada por ele
+> — usando `x` (2D) ou `x` e `y` (3D) como variáveis — funciona.
+
+---
+
+## 🚀 Como rodar
+
+Pré-requisitos: Node.js 18+.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para gerar o build de produção:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Testes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Os testes usam Jest e cobrem o motor de cálculo, o validador de expressões e o detector de
+descontinuidades.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm test
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js 14** (App Router) + **React 18**
+- **TypeScript**
+- **math.js** — parsing e avaliação de expressões
+- **Three.js** + **@react-three/fiber** + **@react-three/drei** — cena 3D e controles de órbita
+- **Tailwind CSS** + **Radix UI** — interface
+- **Motion** — animações
+- **Jest** — testes unitários
